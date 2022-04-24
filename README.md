@@ -40,3 +40,19 @@ Any samtools command can be used to check.
 ```bash
 docker run -it -v $PWD:$PWD -w $PWD samtools samtools fastq
 ```
+
+Using this published release we have to follow the instructions to authenticate with GitHub by using your GitHub token. [Authenticating to the Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
+
+1.  Create your own personal access token
+2.  set an environment variable to your token
+```bash
+export CR_PAT=Your_Token
+```
+4.  Then on the command line you can 
+```bash
+ echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
+ ```
+ 
+ Then you can use the command to pull the image from the GitHub repository.
+ 
+ 
