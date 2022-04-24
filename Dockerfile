@@ -1,15 +1,19 @@
 # Full contents of Dockerfile
-
-FROM continuumio/miniconda3
+FROM ubuntu
 LABEL description="Base docker image with conda and util libraries"
+FROM continuumio/miniconda3
 ARG ENV_NAME="samtools"
 
-# Install the conda environment
-# Unfortunately, as of 2022 April 24, conda install -c bioconda samtools does not work
-#COPY environment.yml /
-#RUN conda env create --quiet --name ${ENV_NAME} --file /environment.yml && conda clean -a
-# Add conda installation dir to PATH (instead of doing 'conda activate')
-#ENV PATH /opt/conda/envs/${ENV_NAME}/bin:$PATH
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && \
+    apt-get -y install gcc mono-mcs && \
+    apt-get -y install libncurses5-dev libncursesw5-dev && \
+    apt-get -y install zlib1g zlib1g-dev && \
+    apt-get -y install bzip2 libbz2-dev && \
+    apt-get -y install liblzma-dev && \
+    apt-get -y install libhtscodecs2 && \
+    apt-get -y install build-essential && \
+    rm -rf /var/lib/apt/lists/*
 
 # need to get, configure and make samtools to have this docker work
 RUN wget https://github.com/samtools/samtools/releases/download/1.15.1/samtools-1.15.1.tar.bz2 && \
