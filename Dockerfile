@@ -1,7 +1,6 @@
 # Full contents of Dockerfile
 FROM ubuntu
 LABEL description="Base docker image with conda and util libraries"
-FROM continuumio/miniconda3
 ARG ENV_NAME="samtools"
 
 ENV DEBIAN_FRONTEND noninteractive
