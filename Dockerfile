@@ -12,6 +12,7 @@ RUN apt-get update && \
     apt-get -y install liblzma-dev && \
     apt-get -y install libhtscodecs2 && \
     apt-get -y install build-essential && \
+    apt-get -y install wget && \
     rm -rf /var/lib/apt/lists/*
 
 # need to get, configure and make samtools to have this docker work
