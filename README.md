@@ -1,4 +1,4 @@
-
+[![Docker](https://github.com/adeslatt/samtools-docker/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/adeslatt/samtools-docker/actions/workflows/docker-publish.yml)
 # samtools-docker
 ## Samtools build done with v1.15.1
 
