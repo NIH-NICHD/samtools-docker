@@ -38,7 +38,7 @@ Then mount and use your current directory and call the tool now encapsulated wit
 Any samtools command can be used to check.
 
 ```bash
-docker run -it -v $PWD:$PWD -w $PWD samtools samtools fastq
+docker run -it -v $PWD:$PWD -w $PWD samtools samtools --version
 ```
 
 ## (Optional) Deposit your container in the your [CAVATICA](cavatica.sbgenomics.com)  Docker Registry
