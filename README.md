@@ -62,13 +62,13 @@ To tag the image just built, you need the image id, to get that simply use the c
 ```bash
 docker images
 REPOSITORY                                           TAG       IMAGE ID       CREATED          SIZE
-rmats                                                latest    0ca8aaf01be0   16 minutes ago   1.53GB
+samtools                                            latest    0ca8aaf01be0   16 minutes ago   1.53GB
 ```
 
 Now we re-tag it for pushing to our own personal [CAVATICA](cavatica.sbgenomics.com) docker container registry.
 
 ```bash
-docker tag 0ca8aaf01be0 pgc-images.sbgenomics.com/[YOUR CAVATICA USERID]/rmats:v4.1.2
+docker tag 0ca8aaf01be0 pgc-images.sbgenomics.com/[YOUR CAVATICA USERID]/samtools:v.15.1
 ```
 
 ### Docker registry login
