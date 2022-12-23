@@ -1,6 +1,6 @@
 [![Docker Image CI](https://github.com/adeslatt/samtools-docker/actions/workflows/docker-image.yml/badge.svg)](https://github.com/adeslatt/samtools-docker/actions/workflows/docker-image.yml)
 # samtools-docker
-## Samtools build done with v1.15.1
+## Samtools build done with v1.16.1
 
 In this case, the conda install does not work -- instead, this Dockerfile gets the release.
 
@@ -94,14 +94,14 @@ Now that we have
 * we have authenticated :whitecheck 
 
 ```bash
-docker push pgc-images.sbgenomics.com/[YOUR CAVATICA USERNAME]/samtools:v1.15.1
+docker push pgc-images.sbgenomics.com/[YOUR CAVATICA USERNAME]/samtools:v1.16.1
 ```
 
 You know things are going correctly when you see something to the effect of:
 
 
 ```bash
-The push refers to repository [pgc-images.sbgenomics.com/deslattesmaysa2/samtools:v1.15.1]
+The push refers to repository [pgc-images.sbgenomics.com/deslattesmaysa2/samtools:v1.16.1]
 ea25457229f1: Pushed 
 17280cc0fa6b: Pushed 
 ab2731ec3f53: Pushed 

@@ -1,7 +1,8 @@
 # Full contents of Dockerfile
 FROM ubuntu
-LABEL description="Base docker image with conda and util libraries"
+LABEL description="samtools from base image ubuntu"
 ARG ENV_NAME="samtools"
+ARG VERSION="1.16.1"
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
@@ -16,10 +17,10 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # need to get, configure and make samtools to have this docker work
-RUN wget https://github.com/samtools/samtools/releases/download/1.15.1/samtools-1.15.1.tar.bz2 && \
-    bzip2 -d samtools-1.15.1.tar.bz2 && \
-    tar xvf samtools-1.15.1.tar && \
-    cd samtools-1.15.1 && \
+RUN wget https://github.com/samtools/samtools/releases/download/${VERSION}/samtools-${VERSION}.tar.bz2 && \
+    bzip2 -d samtools-${VERSION}.tar.bz2 && \
+    tar xvf samtools-${VERSION}.tar && \
+    cd samtools-${VERSION} && \
     ./configure && \
     make && \
     make install
