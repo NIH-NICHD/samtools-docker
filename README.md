@@ -23,7 +23,7 @@ To build your image from the command line:
 * Can do this on [Google shell](https://shell.cloud.google.com) - docker is installed and available
 
 ```bash
-docker build -t samtools .
+docker build -t samtools:v1.16.1 .
 ```
 
 To test this tool from the command line 
@@ -38,7 +38,7 @@ Then mount and use your current directory and call the tool now encapsulated wit
 Any samtools command can be used to check.
 
 ```bash
-docker run -it -v $PWD:$PWD -w $PWD samtools samtools --version
+docker run -it -v $PWD:$PWD -w $PWD samtools:v1.16.1 samtools --version
 ```
 
 ## (Optional) Deposit your container in the your [CAVATICA](cavatica.sbgenomics.com)  Docker Registry
@@ -68,7 +68,7 @@ samtools                                            latest    0ca8aaf01be0   16 
 Now we re-tag it for pushing to our own personal [CAVATICA](cavatica.sbgenomics.com) docker container registry.
 
 ```bash
-docker tag 0ca8aaf01be0 pgc-images.sbgenomics.com/[YOUR CAVATICA USERID]/samtools:v.15.1
+docker tag 0ca8aaf01be0 pgc-images.sbgenomics.com/[YOUR CAVATICA USERID]/samtools:v1.16.1
 ```
 
 ### Docker registry login
